@@ -12,7 +12,8 @@ class EtudiantController extends Controller
      */
     public function index()
     {
-        //
+        $etudiants = Etudiant::all(); 
+        return view('etudiant.index', ['etudiants' => $etudiants]);
     }
 
     /**
@@ -36,7 +37,7 @@ class EtudiantController extends Controller
      */
     public function show(Etudiant $etudiant)
     {
-        //
+        return view('etudiant.show', ['etudiant' => $etudiant]);
     }
 
     /**
