@@ -21,7 +21,7 @@ class EtudiantController extends Controller
      */
     public function create()
     {
-        //
+        return view('etudiant.create');
     }
 
     /**
@@ -29,9 +29,28 @@ class EtudiantController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
 
+        $request->validate([
+            'nom' => 'required|max:50',
+            'adresse' => 'required|max:50',
+            'telephone' =>'required|max:50',
+            'email' =>'required|email',
+            'date_naissance' =>'required',
+            'ville_id' =>'nullable'
+        ]);
+
+        $etudiant = Etudiant::create([
+            'nom' => $request->nom,
+            'adresse' => $request->adresse,
+            'telephone' => $request->telephone,
+            'email' => $request->email,
+            'date_naissance' => $request->date_naissance,
+            'ville_id' => 1
+        ]);
+
+        return redirect()->route('etudiant.show', ['etudiant' => $etudiant->id])->with('success', 'Étudiant ajouté avec succès.');  
+
+    }
     /**
      * Display the specified resource.
      */

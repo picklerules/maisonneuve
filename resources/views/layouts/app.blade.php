@@ -10,29 +10,42 @@
 <body>
     <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">{{ config('app.name')}}</a>
-            <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house fa-lg" style="color: #2c6ddd;"></i></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">{{ config('app.name') }}</a>
+        <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house fa-lg" style="color: #2c6ddd;"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                    <a class="nav-link text-primary" href="{{ route('etudiant.index') }}">Étudiants</a>
-                    </li>
-                    <li class="nav-item">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-primary dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Étudiants
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ route('etudiant.index') }}">Voir la liste</a></li>
+                        <li><a class="dropdown-item" href="{{ route('etudiant.create')}}">Ajouter</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link text-primary" href="#">Villes</a>
-                    </li>
-                </ul>
-            </div>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
     </header>
     <div class="container">
+    @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            {{session('success')}}
+        </div>
+        @endif
         @yield('content')
     </div>
+    
     <footer class="bg-light text-center">
         <div class="p-3">
             &copy; PickleRules {{ date('Y') }} {{ config('app.name') }}
