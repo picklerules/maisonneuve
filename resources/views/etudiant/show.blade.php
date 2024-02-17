@@ -13,7 +13,7 @@
             <p class="card-text"><strong>Date de naissance :</strong> {{ $etudiant->date_naissance }}</p>
             <p class="card-text"><strong>Ville :</strong> {{ $etudiant->ville_id }}</p>
             <!-- Boutons d'action -->
-            <a href="" class="btn btn-primary">Mettre à jour</a>
+            <a href="{{ route('etudiant.edit', $etudiant->id)}}" class="btn btn-primary">Mettre à jour</a>
             <form action="" method="POST" class="d-inline">
                 @csrf
                 @method('DELETE')

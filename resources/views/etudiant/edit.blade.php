@@ -2,8 +2,9 @@
 @section('title', 'Modifier un étudiant')
 @section('content')
 
-<form action="{{route('etudiant.store')}}" method="post">
+<form method="post">
     @csrf 
+    @method('PUT')
     <div class="form-group">
         <label for="nom">Nom</label>
         <input type="text" name="nom" id="nom" class="form-control" value="{{old('nom', $etudiant->nom)}}">
@@ -44,13 +45,14 @@
         <select name="ville_id" id="ville_id" class="form-control">
         <option value="">Sélectionner une ville</option>
             @foreach($villes as $ville)
-                <option value="{{ $ville->id }}" {{ old('ville_id') == $ville->id ? 'selected' : '' }}>{{ $ville->nom }}</option>
+                <option value="{{ $ville->id }}" {{ (old('ville_id', $etudiant->ville_id ?? '') == $ville->id) ? 'selected' : '' }}>{{ $ville->nom }}</option>
             @endforeach
         </select>
 
+
     </div>
     
-    <button type="submit" class="btn btn-primary">Sauvegarder</button>
+    <button type="submit" class="btn btn-primary">Sauvegarder les changements</button>
 </form>
 
 @endsection
