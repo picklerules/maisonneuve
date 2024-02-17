@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
+use App\Models\Ville;
 use Illuminate\Http\Request;
 
 class EtudiantController extends Controller
@@ -21,7 +22,8 @@ class EtudiantController extends Controller
      */
     public function create()
     {
-        return view('etudiant.create');
+        $villes = Ville::all();
+        return view('etudiant.create', ['villes' => $villes]);
     }
 
     /**
@@ -45,7 +47,7 @@ class EtudiantController extends Controller
             'telephone' => $request->telephone,
             'email' => $request->email,
             'date_naissance' => $request->date_naissance,
-            'ville_id' => 1
+            'ville_id' => $request->ville_id
         ]);
 
         return redirect()->route('etudiant.show', ['etudiant' => $etudiant->id])->with('success', 'Étudiant ajouté avec succès.');  
@@ -56,6 +58,7 @@ class EtudiantController extends Controller
      */
     public function show(Etudiant $etudiant)
     {
+        
         return view('etudiant.show', ['etudiant' => $etudiant]);
     }
 
