@@ -11,7 +11,7 @@
             <p class="card-text"><strong>Téléphone :</strong> {{ $etudiant->telephone }}</p>
             <p class="card-text"><strong>Email :</strong> {{ $etudiant->email }}</p>
             <p class="card-text"><strong>Date de naissance :</strong> {{ $etudiant->date_naissance }}</p>
-            <p class="card-text"><strong>Ville :</strong> {{ $etudiant->ville_id }}</p>
+            <p class="card-text"><strong>Ville :</strong> {{ $etudiant->ville->nom }}</p>
             <a href="{{ route('etudiant.edit', $etudiant->id)}}" class="btn btn-primary">Mettre à jour</a>
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
                 Supprimer

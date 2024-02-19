@@ -17,4 +17,7 @@ class Etudiant extends Model
         'date_naissance',
         'ville_id'];
 
+        public function ville() {
+            return $this->belongsTo(Ville::class);
+        }
 }
