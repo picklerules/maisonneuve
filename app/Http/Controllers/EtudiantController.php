@@ -13,7 +13,9 @@ class EtudiantController extends Controller
      */
     public function index()
     {
-        $etudiants = Etudiant::all(); 
+        $etudiants = Etudiant::select()
+        ->orderBy('nom')
+        ->get(); 
         return view('etudiant.index', ['etudiants' => $etudiants]);
     }
 
