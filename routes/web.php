@@ -16,7 +16,7 @@ use App\Http\Controllers\EtudiantController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/etudiants', [EtudiantController::class, 'index'])->name('etudiant.index');
 Route::get('/etudiant/{etudiant}', [EtudiantController::class,'show'])->name('etudiant.show');
