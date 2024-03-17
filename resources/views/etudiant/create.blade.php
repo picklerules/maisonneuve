@@ -33,6 +33,13 @@
         @endif
     </div>
     <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password" class="form-control" required>
+        @if($errors->has('password'))
+            <div class="text-danger mt-2">{{ $errors->first('password') }}</div>
+        @endif
+    </div>
+    <div class="form-group">
         <label for="date_naissance">Date de naissance</label>
         <input type="date" name="date_naissance" id="date_naissance" class="form-control" value="{{old('date_naissance')}}">
         @if($errors->has('date_naissance'))

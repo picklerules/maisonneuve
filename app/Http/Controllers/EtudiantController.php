@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Etudiant;
 use App\Models\Ville;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class EtudiantController extends Controller
 {
@@ -38,18 +40,24 @@ class EtudiantController extends Controller
             'nom' => 'required|max:50',
             'adresse' => 'required|max:50',
             'telephone' =>'required|max:50',
-            'email' =>'required|email',
             'date_naissance' =>'required',
-            'ville_id' =>'required'
+            'ville_id' =>'required',
+            'password' => 'required|min:6|max:20'
+        ]);
+
+        $user = User::create([
+            'name' => $request->nom,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
 
         $etudiant = Etudiant::create([
             'nom' => $request->nom,
             'adresse' => $request->adresse,
             'telephone' => $request->telephone,
-            'email' => $request->email,
             'date_naissance' => $request->date_naissance,
-            'ville_id' => $request->ville_id
+            'ville_id' => $request->ville_id,
+            'user_id' => $user->id
         ]);
 
         return redirect()->route('etudiant.show', ['etudiant' => $etudiant->id])->with('success', 'Étudiant ajouté avec succès.');  
@@ -82,7 +90,6 @@ class EtudiantController extends Controller
             'nom' => 'required|max:50',
             'adresse' => 'required|max:50',
             'telephone' =>'required|max:50',
-            'email' =>'required|email',
             'date_naissance' =>'required',
             'ville_id' =>'required'
         ]);
@@ -91,7 +98,6 @@ class EtudiantController extends Controller
             'nom' => $request->nom,
             'adresse' => $request->adresse,
             'telephone' => $request->telephone,
-            'email' => $request->email,
             'date_naissance' => $request->date_naissance,
             'ville_id' => $request->ville_id
         ]);
