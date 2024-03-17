@@ -1,0 +1,38 @@
+TP 1 – Créer un site web dynamique en utilisant le cadriciel Laravel
+
+1.Création du Projet Laravel
+
+composer create-project --prefer-dist laravel/laravel Maisonneuve-2395496
+
+cd Maisonneuve-2395496
+
+2. Création des Modèles
+
+php artisan make:model Etudiant -m
+php artisan make:model Ville -m
+
+3. Création des Tables  
+
+php artisan migrate
+
+4. Saisie des Villes
+
+php artisan make:factory VilleFactory --model=Ville
+php artisan tinker
+\App\Models\Ville::factory()->times(15)->create();
+
+5. Saisie des Étudiants  
+
+php artisan make:factory EtudiantFactory --model=Etudiant
+php artisan tinker
+\App\Models\Etudiant::factory()->times(100)->create();
+
+6. Création des Contrôleurs  
+
+php artisan make:controller VilleController -m Ville
+php artisan make:controller EtudiantController -m Etudiant
+
+
+Liens :
+https://e2395496.webdev.cmaisonneuve.qc.ca/Maisonneuve-2395496/
+https://github.com/picklerules/tp1
