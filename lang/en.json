@@ -4,7 +4,21 @@
     "English" : "English",
     "French" : "French",
     "Language" : "Language",
+    "Student" : "Student",
     "Students" : "Students",
-    "New student": "New student",
-    "Students list": "Students list"
+    "Add student": "New student",
+    "Students list": "Students list",
+    "Update" : "Update",
+    "Delete" : "Delete",
+    "Cancel" : "Cancel",
+    "Name" : "Name",
+    "Email" : "Email",
+    "Address" : "Address",
+    "Phone" : "Phone",
+    "City" : "City",
+    "Select a city" : "Select a city",
+    "Date of birth" : "Date of birth",
+    "Submit changes" : "Submit changes",
+    "Password" : "Password",
+    "Submit" : "Submit"
 }

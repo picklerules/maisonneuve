@@ -11,7 +11,7 @@
             <div class="card mb-3">
                 <div class="card-body d-flex justify-content-between align-items-center">
                     <h4 class="card-title"><a href="{{ route('etudiant.show', $etudiant->id) }}">{{ $etudiant->user->name }}</a></h4>
-                    <a href="{{ route('etudiant.edit', $etudiant->id)}}" class="btn btn-primary">Mettre à jour</a>
+                    <a href="{{ route('etudiant.edit', $etudiant->id)}}" class="btn btn-primary">@lang('Update')</a>
                 </div>
             </div>
         </div>

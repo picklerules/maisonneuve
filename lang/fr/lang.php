@@ -6,4 +6,6 @@ return [
     'text_welcome_description' => 'Cette interface vous permet de gérer les dossiers des étudiants.',
     'text_welcome_paragraph' => "Utilisez la barre de navigation pour accéder aux différentes sections du panneau d'administration.",
     'text_welcome_button' => 'Découvrir plus',
+    'warning' => 'Attention',
+    'warning_text' => "Voulez-vous vraiment supprimer l'étudiant "
 ];

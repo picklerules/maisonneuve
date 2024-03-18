@@ -5,6 +5,20 @@
     "French" : "Français",
     "Language" : "Langue",
     "Students" : "Étudiants",
-    "New student": "Nouveau étudiant",
-    "Students list": "Liste des étudiants"
+    "Student" : "Étudiant",
+    "Add student": "Nouveau étudiant",
+    "Students list": "Liste des étudiants",
+    "Update" : "Mettre à jour",
+    "Delete" : "Supprimer",
+    "Cancel" : "Annuler",
+    "Name" : "Nom",
+    "Email" : "Courriel",
+    "Address" : "Adresse",
+    "Phone" : "Téléphone",
+    "City" : "Ville",
+    "Select a city" : "Sélectionnez une ville",
+    "Date of birth" : "Date de naissance",
+    "Submit changes" : "Soumettre les modifications",
+    "Password" : "Mot de passe",
+    "Submit" : "Soumettre"
 }
