@@ -6,11 +6,11 @@
 
 <div class="container mt-5">
     <div class="jumbotron">
-        <h1 class="display-4">Bienvenue sur la page d'admin de Maisonneuve!</h1>
-        <p class="lead">Cette interface vous permet de gérer les dossiers des étudiants.</p>
+        <h1 class="display-4">@lang('lang.text_welcome_title')</h1>
+        <p class="lead">@lang('lang.text_welcome_description')</p>
         <hr class="my-4">
-        <p>Utilisez la barre de navigation pour accéder aux différentes sections du panneau d'administration.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Découvrir plus</a>
+        <p>@lang('lang.text_welcome_paragraph')</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">@lang('lang.text_welcome_button')</a>
     </div>
 </div>
 

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SetLocaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,5 @@ Route::delete('/etudiant/{etudiant}', [EtudiantController::class, 'destroy'])->n
 Route::get('/login', [AuthController::class, 'create'])->name('login');
 Route::post('/login', [AuthController::class, 'store'])->name('login.store');
 Route::get('/logout', [AuthController::class, 'destroy'])->name('logout');
+
+Route::get('/lang/{locale}', [SetLocaleController::class, 'index'])->name('lang');

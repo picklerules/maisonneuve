@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/0f52bb4695.js" crossorigin="anonymous"></script>
 </head>
 <body class="d-flex flex-column min-vh-100">
-
+    @php $locale = session()->get('locale')  @endphp
     <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
     <div class="container-fluid">
@@ -19,23 +19,31 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+            
                 <li class="nav-item dropdown">
                     <a class="nav-link text-primary dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Étudiants
+                        @lang('Students')
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ route('etudiant.index') }}">Voir la liste</a></li>
-                        <li><a class="dropdown-item" href="{{ route('etudiant.create')}}">Ajouter</a></li>
+                        <li><a class="dropdown-item" href="{{ route('etudiant.index') }}">@lang('Students list')</a></li>
+                        <li><a class="dropdown-item" href="{{ route('etudiant.create')}}">@lang('Add student')</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">@lang('Language') {{ $locale == '' ? '' : "($locale)" }}</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('lang', 'en') }}">@lang('English')</a></li>
+                        <li><a class="dropdown-item" href="{{ route('lang', 'fr') }}">@lang('French')</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
                 @guest
-                        <a href="{{ route('login') }}" class="nav-link">Login</a>
+                        <a href="{{ route('login') }}" class="nav-link">@lang('Login')</a>
                     @else
-                        <a href="{{ route('logout') }}" class="nav-link">Logout</a>
+                        <a href="{{ route('logout') }}" class="nav-link">@lang('Logout')</a>
                     @endguest
                 </li>
-
+  
             </ul>
         </div>
     </div>
@@ -44,6 +52,7 @@
 
     <main class="flex-grow-1">
     <div class="container">
+    SESSION: {{ session()->get('locale') }}
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
