@@ -9,20 +9,21 @@ class Etudiant extends Model
 {
     use HasFactory;
     
+    public $incrementing = false;
+
     protected $fillable = [
-        'nom',
         'adresse',
         'telephone',
         'date_naissance',
         'ville_id',
-        'user_id'];
+        'id'];
 
         public function ville() {
             return $this->belongsTo(Ville::class);
         }
 
         public function user() {
-            return $this->belongsTo(User::class);
+            return $this->hasOne(User::class, 'id'); 
         }
         
 }

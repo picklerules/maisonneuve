@@ -5,8 +5,8 @@
 <form action="{{route('etudiant.store')}}" method="post">
     @csrf 
     <div class="form-group">
-        <label for="nom">Nom</label>
-        <input type="text" name="nom" id="nom" class="form-control" value="{{old('nom')}}">
+        <label for="name">Nom</label>
+        <input type="text" name="name" id="name" class="form-control" value="{{old('name')}}">
         @if($errors->has('nom'))
             <div class="text-danger mt-2">{{$errors->first('nom')}}</div>
         @endif

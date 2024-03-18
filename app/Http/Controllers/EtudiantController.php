@@ -15,9 +15,9 @@ class EtudiantController extends Controller
      */
     public function index()
     {
-        $etudiants = Etudiant::select()
-        ->orderBy('nom')
-        ->get(); 
+        $etudiants = Etudiant::join('users', 'etudiants.id', '=', 'users.id')
+                    ->orderBy('users.name')
+                    ->get(['etudiants.*', 'users.name as userName']); 
         return view('etudiant.index', ['etudiants' => $etudiants]);
     }
 
@@ -37,27 +37,27 @@ class EtudiantController extends Controller
     {
 
         $request->validate([
-            'nom' => 'required|max:50',
+            'name' => 'required|max:50',
             'adresse' => 'required|max:50',
             'telephone' =>'required|max:50',
             'date_naissance' =>'required',
             'ville_id' =>'required',
+            'email' =>'required|email|unique:users',
             'password' => 'required|min:6|max:20'
         ]);
 
         $user = User::create([
-            'name' => $request->nom,
+            'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
         $etudiant = Etudiant::create([
-            'nom' => $request->nom,
             'adresse' => $request->adresse,
             'telephone' => $request->telephone,
             'date_naissance' => $request->date_naissance,
             'ville_id' => $request->ville_id,
-            'user_id' => $user->id
+            'id' => $user->id
         ]);
 
         return redirect()->route('etudiant.show', ['etudiant' => $etudiant->id])->with('success', 'Étudiant ajouté avec succès.');  
@@ -68,8 +68,8 @@ class EtudiantController extends Controller
      */
     public function show(Etudiant $etudiant)
     {
-
-        return view('etudiant.show', ['etudiant' => $etudiant]);
+        $users = User::all();
+        return view('etudiant.show', ['etudiant' => $etudiant, 'users' => $users]);
     }
 
     /**

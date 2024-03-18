@@ -6,10 +6,10 @@
     <h1 class="my-5 text-center">Étudiant</h1>
     <div class="card">
         <div class="card-body">
-            <h2 class="card-title">{{ $etudiant->nom }}</h2>
+            <h2 class="card-title">{{ $etudiant->user->name }}</h2>
             <p class="card-text"><strong>Adresse :</strong> {{ $etudiant->adresse }}</p>
             <p class="card-text"><strong>Téléphone :</strong> {{ $etudiant->telephone }}</p>
-            <p class="card-text"><strong>Email :</strong> {{ $etudiant->email }}</p>
+            <p class="card-text"><strong>Email :</strong> {{ $etudiant->user->email }}</p>
             <p class="card-text"><strong>Date de naissance :</strong> {{ $etudiant->date_naissance }}</p>
             <p class="card-text"><strong>Ville :</strong> {{ $etudiant->ville->nom }}</p>
             <a href="{{ route('etudiant.edit', $etudiant->id)}}" class="btn btn-primary">Mettre à jour</a>

@@ -28,6 +28,13 @@
                         <li><a class="dropdown-item" href="{{ route('etudiant.create')}}">Ajouter</a></li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                @guest
+                        <a href="{{ route('login') }}" class="nav-link">Login</a>
+                    @else
+                        <a href="{{ route('logout') }}" class="nav-link">Logout</a>
+                    @endguest
+                </li>
 
             </ul>
         </div>

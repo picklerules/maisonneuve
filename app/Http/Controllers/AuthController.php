@@ -41,7 +41,7 @@ class AuthController extends Controller
         endif;
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
         Auth::login($user);
-        return redirect()->intended(route('task.index'))->withSuccess('Signed in');
+        return redirect()->intended(route('etudiant.index'))->withSuccess('Vous êtes connecté avec succès');
     }
 
     /**
@@ -71,8 +71,10 @@ class AuthController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy()
     {
-        //
+        Session::flush();
+        Auth::logout();
+        return redirect(route('login'));
     }
 }
