@@ -87,15 +87,20 @@ class EtudiantController extends Controller
     public function update(Request $request, Etudiant $etudiant)
     {
         $request->validate([
-            'nom' => 'required|max:50',
+            'name' => 'required|max:50',
             'adresse' => 'required|max:50',
             'telephone' =>'required|max:50',
             'date_naissance' =>'required',
-            'ville_id' =>'required'
+            'ville_id' =>'required',
+            'email' => 'required|email|unique:users,email,' . $etudiant->user->id
+        ]);
+
+        $etudiant->user()->update([
+            'name' => $request->name,
+            'email' => $request->email,
         ]);
 
         $etudiant->update([
-            'nom' => $request->nom,
             'adresse' => $request->adresse,
             'telephone' => $request->telephone,
             'date_naissance' => $request->date_naissance,
