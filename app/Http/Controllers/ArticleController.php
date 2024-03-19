@@ -29,13 +29,36 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'titre_en' => 'required|max:255',
-            'contenu_en' => 'required',
+            'titre_en' => 'nullable|max:255',
+            'contenu_en' => 'nullable',
             'titre_fr' => 'nullable|max:255',
             'contenu_fr' => 'nullable',
         ]);
 
-         $titre = ['en' => $request->titre_en];
+        //Vérifier que le champs sont remplis en anglais ou en français
+        if (empty($request->titre_en) && empty($request->contenu_en) && empty($request->titre_fr) && empty($request->contenu_fr)) {
+            return back()->withErrors('Au moins une langue doit être remplie.');
+        }
+    
+        // Vérifier si le titre et le contenu sont de la même langue
+        $inconsistentLanguage = false;
+        if (!empty($request->titre_en) || !empty($request->contenu_en)) {
+            if (empty($request->titre_en) || empty($request->contenu_en)) {
+                $inconsistentLanguage = true;
+            }
+        }
+        if (!empty($request->titre_fr) || !empty($request->contenu_fr)) {
+            if (empty($request->titre_fr) || empty($request->contenu_fr)) {
+                $inconsistentLanguage = true;
+            }
+        }
+    
+        if ($inconsistentLanguage) {
+            return back()->withErrors('Le titre et le contenu doivent être de la même langue.');
+        }
+
+
+        $titre = ['en' => $request->titre_en];
         $contenu = ['en' => $request->contenu_en];
 
         if($request->contenu_fr != null) { 
@@ -51,7 +74,7 @@ class ArticleController extends Controller
             'contenu' => $contenu,
             'user_id' => auth()->id()
         ]);
-        
+
         return back()->withSuccess('Article published successfully!');
     }
 

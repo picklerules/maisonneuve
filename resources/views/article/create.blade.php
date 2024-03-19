@@ -18,17 +18,23 @@
             <div class="card-body">
                 <form action="{{ route('article.store') }}" method="POST">
                     @csrf
+                    <div class="card-header">
+                        <h5 class="card-title">Add an article in English</h5>
+                    </div>
                     <div class="mb-3">
                         <label for="titre_en" class="form-label">Title in English</label>
                         <input type="text" class="form-control" id="titre_en" name="titre_en" value="{{ old('titre_en') }}">
                     </div>
                     <div class="mb-3">
-                        <label for="titre_fr" class="form-label">Titre en Français</label>
-                        <input type="text" class="form-control" id="titre_fr" name="titre_fr" value="{{ old('titre_fr') }}">
-                    </div>
-                    <div class="mb-3">
                         <label for="contenu_en" class="form-label">Content in English</label>
                         <textarea class="form-control" id="contenu_en" name="contenu_en">{{ old('contenu_en') }}</textarea>
+                    </div>
+                    <div class="card-header">
+                        <h5 class="card-title">Add an article in French</h5>
+                    </div>
+                    <div class="mb-3">
+                        <label for="titre_fr" class="form-label">Titre en Français</label>
+                        <input type="text" class="form-control" id="titre_fr" name="titre_fr" value="{{ old('titre_fr') }}">
                     </div>
                     <div class="mb-3">
                         <label for="contenu_fr" class="form-label">Contenu en Français</label>
