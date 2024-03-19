@@ -14,5 +14,6 @@ return [
     'add_article_title_fr' => 'Add an article in French',
     'article_title_fr' => 'Title in French',
     'article_content_fr' => 'Content in French',
+    'warning_text_article' => "Are you sure you want to delete the article "
 
 ];

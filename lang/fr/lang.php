@@ -14,5 +14,5 @@ return [
     'add_article_title_fr' => 'Ajouter un article en français',
     'article_title_fr' => 'Titre en Français',
     'article_content_fr' => 'Contenu en Français',
-
+    'warning_text_article' => 'Voulez-vous vraiment supprimer l\'article '
 ];
