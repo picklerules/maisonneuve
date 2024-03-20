@@ -2,32 +2,30 @@
 @section('title', 'Forum')
 @section('content')
 
-<h1 class="my-5">Forum</h1>
+<h1 class="my-5 text-center">Forum</h1>
 <div class="row">
     @forelse ($articles as $article)
-    <div class="col-md-6">
-        <div class="card mb-4">
-            <div class="card-header">
-                <h5 class="card-title">
-                    @foreach ($article->titre as $lang => $titre)
-                        <span>{{ strtoupper($lang) }}: {{ $titre }}</span><br>
-                    @endforeach
-                </h5>
-            </div>
-            <div class="card-body">
+    <div class="col-md-6 mb-4">
+        <div class="border rounded p-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+                @foreach ($article->titre as $lang => $titre)
+                    <h5 class="text-uppercase">{{ $lang }}: {{ $titre }}</h5>
+                @endforeach
+                <hr>
                 @foreach ($article->contenu as $lang => $contenu)
-                    <p>{{ strtoupper($lang) }}: {{ $contenu }}</p>
+                    <p>{{ $lang }}: {{ $contenu }}</p>
                 @endforeach
             </div>
-            <div class="card-footer">
+            <div>
+                <small class="text-muted">@lang('Posted by') {{ $article->user->name }} @lang('on') {{ $article->created_at->format('d/m/Y') }}</small>
+            </div>
+            <div class="mt-2">
                 @if(auth()->id() == $article->user_id)
-                    <a href="{{ route('article.edit', $article->id) }}" class="btn btn-primary">Edit</a>
-                    <form action="{{ route('article.delete', $article->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                            @lang('Delete')
-                        </button>
+                    <a href="{{ route('article.edit', $article->id) }}" class="btn btn-sm btn-outline-primary">Edit</a>
+                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $article->id }}">
+                        Delete
+                    </button>
+
                     </form>
                 @endif
             </div>

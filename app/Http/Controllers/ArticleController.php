@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -12,9 +13,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
+        $users = User::all();
+        $articles = Article::orderBy('created_at', 'desc')->get();
         
-        return view('article.index', compact('articles'));
+        return view('article.index', compact('articles', 'users'));
     }
 
     /**
