@@ -29,5 +29,10 @@
     "File" : "Fichier",
     "Repertory" : "Repertoire",
     "View files" : "Voir les fichiers",
-    "Upload files" : "Télécharger un fichier"
+    "Upload files" : "Télécharger un fichier",
+    "optional" : "facultatif",
+    "Title" : "Titre",
+    "Date Posted" : "Date de publication",
+    "Actions" : "Actions",
+    "Edit" : "Modifier"
 }

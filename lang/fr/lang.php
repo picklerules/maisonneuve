@@ -15,8 +15,11 @@ return [
     'article_title_fr' => 'Titre en Français',
     'article_content_fr' => 'Contenu en Français',
     'warning_text_article' => 'Voulez-vous vraiment supprimer l\'article ',
+    'warning_text_file' => 'Voulez-vous vraiment supprimer le fichier ',
     'upload_doc' => 'Télévervez un document',
     'upload_doc_text' => 'Partager des documents en formats PDF, ZIP, ou DOC.',
     'upload_doc_button' => 'Téléverser',
     'upload_doc_form_text' => 'Seuls les fichiers PDF, ZIP, ou DOC sont autorisés.',
+    'no_files_text' => 'Aucun fichier n\'a été partagé.',
+    'no_articles_text' => 'Il n\'y a aucun article à afficher.',
 ];

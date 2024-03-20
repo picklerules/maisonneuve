@@ -15,10 +15,13 @@ return [
     'article_title_fr' => 'Title in French',
     'article_content_fr' => 'Content in French',
     'warning_text_article' => "Are you sure you want to delete the article ",
+    'warning_text_file' => "Are you sure you want to delete the file ",
     'upload_doc' => 'Upload a Document',
     'upload_doc_text' => 'Share documents in PDF, ZIP, or DOC formats.',
     'upload_doc_button' => 'Upload',
     'upload_doc_form_text' => 'Only PDF, ZIP, or DOC files are allowed.',
+    'no_files_text' => 'No files have been shared yet.',
+    'no_articles_text' => 'There are no articles to display.',
 ];
 
 
