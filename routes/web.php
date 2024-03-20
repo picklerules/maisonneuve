@@ -5,6 +5,7 @@ use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SetLocaleController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\FileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/article/{article}', [ArticleController::class, 'edit'])->name('article.edit');
     Route::put('/edit/article/{article}', [ArticleController::class, 'update']);
     Route::delete('/article/{article}', [ArticleController::class, 'destroy'])->name('article.delete'); 
+
+    Route::get('/files', [FileController::class, 'index'])->name('file.index');
+    Route::get('/create/file', [FileController::class, 'create'])->name('file.create');
+    Route::post('/create/file', [FileController::class, 'store'])->name('file.store');
 
 });
 
