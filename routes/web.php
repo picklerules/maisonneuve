@@ -45,6 +45,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/files', [FileController::class, 'index'])->name('file.index');
     Route::get('/create/file', [FileController::class, 'create'])->name('file.create');
     Route::post('/create/file', [FileController::class, 'store'])->name('file.store');
+    Route::get('/edit/file/{file}', [FileController::class, 'edit'])->name('file.edit');
+    Route::put('/edit/file/{file}', [FileController::class, 'update']);
+    Route::delete('/file/{file}', [FileController::class, 'destroy'])->name('file.delete'); 
 
 });
 

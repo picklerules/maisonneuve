@@ -14,6 +14,11 @@ return [
     'add_article_title_fr' => 'Add an article in French',
     'article_title_fr' => 'Title in French',
     'article_content_fr' => 'Content in French',
-    'warning_text_article' => "Are you sure you want to delete the article "
-
+    'warning_text_article' => "Are you sure you want to delete the article ",
+    'upload_doc' => 'Upload a Document',
+    'upload_doc_text' => 'Share documents in PDF, ZIP, or DOC formats.',
+    'upload_doc_button' => 'Upload',
+    'upload_doc_form_text' => 'Only PDF, ZIP, or DOC files are allowed.',
 ];
+
+

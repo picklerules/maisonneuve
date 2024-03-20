@@ -14,5 +14,9 @@ return [
     'add_article_title_fr' => 'Ajouter un article en français',
     'article_title_fr' => 'Titre en Français',
     'article_content_fr' => 'Contenu en Français',
-    'warning_text_article' => 'Voulez-vous vraiment supprimer l\'article '
+    'warning_text_article' => 'Voulez-vous vraiment supprimer l\'article ',
+    'upload_doc' => 'Télévervez un document',
+    'upload_doc_text' => 'Partager des documents en formats PDF, ZIP, ou DOC.',
+    'upload_doc_button' => 'Téléverser',
+    'upload_doc_form_text' => 'Seuls les fichiers PDF, ZIP, ou DOC sont autorisés.',
 ];
