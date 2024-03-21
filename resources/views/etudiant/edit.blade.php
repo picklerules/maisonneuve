@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Modifier un étudiant')
+@section('title')
+    @lang('lang.edit_student_title')
+@endsection
 @section('content')
 
 <form method="post">

@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Edit File')
+@section('title')
+    @lang('lang.edit_doc_title')
+@endsection
 @section('content')
 
 <form method="post" enctype="multipart/form-data">

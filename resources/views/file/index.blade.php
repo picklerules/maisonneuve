@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Files Repository')
+@section('title')
+    @lang('lang.repository_title')
+@endsection
 @section('content')
 
 <div class="container mt-4">

@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Forum')
+@section('title')
+    @lang('lang.create_article_title')
+@endsection
 @section('content')
 @if(!$errors->isEmpty())
 <div class="alert alert-danger alert-dismissible fade show" role="alert">

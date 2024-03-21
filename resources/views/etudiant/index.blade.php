@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Liste des étudiants')
+@section('title')
+    @lang('lang.student_list_title')
+@endsection
 @section('content')
 
 @forelse ($etudiants as $etudiant)

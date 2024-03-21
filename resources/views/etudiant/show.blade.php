@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Étudiant')
+@section('title')
+    @lang('lang.student_show_title')
+@endsection
 @section('content')
 
 <div class="container my-5">

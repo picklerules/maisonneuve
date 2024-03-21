@@ -58,7 +58,7 @@ class ArticleController extends Controller
         }
     
         if ($inconsistentLanguage) {
-            return back()->withErrors('Le titre et le contenu doivent être de la même langue.')->withInput();
+            return back()->withErrors(__('lang.inconsistent_language'))->withInput();
         }
 
 
@@ -79,7 +79,7 @@ class ArticleController extends Controller
             'user_id' => auth()->id()
         ]);
 
-        return back()->withSuccess('Article published successfully!');
+        return back()->withSuccess(__('lang.article_created_success'));
     }
 
     /**
@@ -96,7 +96,7 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         if (auth()->id() !== $article->user_id) {
-            abort(403, 'Unauthorized action.');
+            return redirect()->route('article.index')->withErrors(__('lang.non_authorized_action'));
         }
     
         return view('article.edit', compact('article'));
@@ -108,7 +108,7 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         if (auth()->id() !== $article->user_id) {
-            abort(403, 'Unauthorized action.');
+            return redirect()->route('article.index')->withErrors(__('lang.non_authorized_action'));
         }
     
         $request->validate([
@@ -132,7 +132,7 @@ class ArticleController extends Controller
         }
     
         if ($inconsistentLanguage) {
-            return back()->withErrors('Le titre et le contenu doivent être de la même langue.')->withInput();
+            return back()->withErrors(__('lang.inconsistent_language'))->withInput();
         }
 
         $titre = ['en' => $request->titre_en];
@@ -150,7 +150,7 @@ class ArticleController extends Controller
             'contenu' => $contenu,
         ]);
     
-        return redirect()->route('article.index')->with('success', 'Article updated successfully!');
+        return redirect()->route('article.index')->withSuccess(__('lang.article_updated_success'));
     }
 
     /**
@@ -159,11 +159,11 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         if (auth()->id() !== $article->user_id) {
-            abort(403, 'Unauthorized action.');
+            return redirect()->route('article.index')->withErrors(__('lang.non_authorized_action'));
         }
     
         $article->delete();
     
-        return redirect()->route('article.index')->with('success', 'Article deleted successfully!');
+        return redirect()->route('article.index')->withSuccess(__('lang.article_deleted_success'));
     }
 }

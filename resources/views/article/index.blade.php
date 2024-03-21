@@ -1,8 +1,9 @@
 @extends('layouts.app')
-@section('title', 'Forum')
+@section('title')
+    @lang('lang.forum_title')
+@endsection
 @section('content')
-
-<h1 class="my-5 text-center">Forum</h1>
+<h1 class="my-5 text-center">@lang('Forum')</h1>
 <div class="row">
     @forelse ($articles as $article)
     <div class="col-md-6 mb-4">
@@ -21,7 +22,7 @@
             </div>
             <div class="mt-2">
                 @if(auth()->id() == $article->user_id)
-                    <a href="{{ route('article.edit', $article->id) }}" class="btn btn-sm btn-outline-primary">@lang('Edit')</a>
+                    <a href="{{ route('article.edit', $article->id) }}" class="btn btn-secondary">@lang('Edit')</a>
                     <form action="{{ route('article.delete', $article->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')

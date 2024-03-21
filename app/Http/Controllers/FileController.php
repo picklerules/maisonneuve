@@ -43,7 +43,7 @@ class FileController extends Controller
         $file->user_id = auth()->id();
         $file->save();
     
-        return redirect()->route('file.index')->withSuccess('Document shared successfully!');
+        return redirect()->route('file.index')->withSuccess(__('lang.file_upload_success'));
     }
 
     /**
@@ -76,7 +76,7 @@ class FileController extends Controller
     {
 
         if (auth()->id() !== $file->user_id) {
-            abort(403, 'Unauthorized action.');
+            return redirect()->route('file.index')->withErrors(__('lang.non_authorized_action'));
         }
     
         $request->validate([
@@ -102,7 +102,7 @@ class FileController extends Controller
         $file->title = json_encode($titles);
         $file->save();
     
-        return redirect()->route('file.index')->withSuccess('File updated successfully!');
+        return redirect()->route('file.index')->withSuccess(__('lang.file_update_success'));
     }
     
     /**
@@ -111,13 +111,13 @@ class FileController extends Controller
     public function destroy(File $file)
     {
         if (auth()->id() !== $file->user_id) {
-            return redirect()->route('file.index')->with('error', 'Vous n\'êtes pas autorisé à effectuer cette action.');
+            return redirect()->route('file.index')->withErrors(__('lang.non_authorized_action'));
         }
     
         Storage::delete($file->file_path);
     
         $file->delete();
     
-        return redirect()->route('file.index')->with('success', 'Le fichier a été supprimé avec succès.');
+        return redirect()->route('file.index')->withSuccess(__('lang.delete_file_success'));
     }
 }

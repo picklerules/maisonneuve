@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Ajouter un étudiant')
+@section('title')
+    @lang('lang.create_student_title')
+@endsection
 @section('content')
 
 <form action="{{route('etudiant.store')}}" method="post">

@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Upload a Document')
+@section('title')
+    @lang('lang.upload_doc_title')
+@endsection
 @section('content')
 @if(!$errors->isEmpty())
 <div class="alert alert-danger alert-dismissible fade show" role="alert">

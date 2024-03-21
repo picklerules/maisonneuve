@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Modifier un article')
+@section('title')
+    @lang('lang.edit_article_title')
+@endsection
 @section('content')
-
-
 @if(!$errors->isEmpty())
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
     <ul>
