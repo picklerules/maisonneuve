@@ -9,13 +9,13 @@
     <div class="col-md-6 mb-4">
         <div class="border rounded p-4 h-100 d-flex flex-column justify-content-between">
             <div>
-                @foreach ($article->titre as $lang => $titre)
-                    <h5 class="text-uppercase">{{ $lang }}: {{ $titre }}</h5>
-                @endforeach
+
+                    <h5 class="text-uppercase">{{ $article->titre ? $article->titre[app()->getLocale()]?? $article->titre['en'] : '' }}</h5>
+
                 <hr>
-                @foreach ($article->contenu as $lang => $contenu)
-                    <p>{{ $lang }}: {{ $contenu }}</p>
-                @endforeach
+ 
+                    <p>{{ $article->contenu ? $article->contenu[app()->getLocale()]?? $article->contenu['en'] : '' }}</p>
+
             </div>
             <div>
                 <small class="text-muted">@lang('Posted by') {{ $article->user->name }} @lang('on') {{ $article->created_at->format('d/m/Y') }}</small>

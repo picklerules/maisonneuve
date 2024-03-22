@@ -33,8 +33,8 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'titre_en' => 'required_without:titre_fr|max:30',
-            'contenu_en' => 'required_without:contenu_fr|max:255',
+            'titre_en' => 'required|max:30',
+            'contenu_en' => 'required|max:255',
             'titre_fr' => 'nullable|max:30',
             'contenu_fr' => 'nullable|max:255',
         ]);
@@ -112,8 +112,8 @@ class ArticleController extends Controller
         }
     
         $request->validate([
-            'titre_en' => 'required_without:titre_fr|max:30',
-            'contenu_en' => 'required_without:contenu_fr|max:255',
+            'titre_en' => 'required|max:30',
+            'contenu_en' => 'required|max:255',
             'titre_fr' => 'nullable|max:30',
             'contenu_fr' => 'nullable|max:255',
         ]);

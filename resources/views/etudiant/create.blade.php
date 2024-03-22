@@ -29,28 +29,28 @@
             @endforeach
         </select>
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="telephone">@lang('Phone')</label>
         <input type="text" name="telephone" id="telephone" class="form-control" value="{{old('telephone')}}">
         @if($errors->has('telephone'))
             <div class="text-danger mt-2">{{$errors->first('telephone')}}</div>
         @endif
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="date_naissance">@lang('Date of birth')</label>
         <input type="date" name="date_naissance" id="date_naissance" class="form-control" value="{{old('date_naissance')}}">
         @if($errors->has('date_naissance'))
             <div class="text-danger mt-2">{{$errors->first('date_naissance')}}</div>
         @endif
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="email">@lang('Email')</label>
         <input type="text" name="email" id="email" class="form-control" value="{{old('email')}}">
         @if($errors->has('email'))
             <div class="text-danger mt-2">{{$errors->first('email')}}</div>
         @endif
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="password">@lang('Password')</label>
         <input type="password" name="password" id="password" class="form-control" required>
         @if($errors->has('password'))

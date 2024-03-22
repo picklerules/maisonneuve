@@ -18,14 +18,6 @@
         <tbody>
         @forelse ($files as $file)
             <tr>
-                <td>
-                @php
-                    $titles = json_decode($file->title, true);
-                @endphp
-                @foreach ($titles as $lang => $title)
-                    <div>{{ strtoupper($lang) }}: {{ $title }}</div>
-                @endforeach
-                </td>
                 <td>{{ $file->user->name }}</td>
                 <td>{{ $file->created_at->format('d/m/Y') }}</td>
                 <td>
