@@ -84,7 +84,7 @@ class FileController extends Controller
         $request->validate([
             'title_en' => 'required|string|max:30',
             'title_fr' => 'nullable|string|max:30',
-            'file' => 'required|file|mimes:pdf,zip,doc,docx',
+            'file' => 'nullable|file|mimes:pdf,zip,doc,docx',
         ]);
     
 
@@ -104,6 +104,7 @@ class FileController extends Controller
             $path = $request->file('file')->store('public/documents');
             $file->file_path = $path;
         }
+
 
         $file->title;
         $file->save();

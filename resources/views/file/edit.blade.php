@@ -29,6 +29,12 @@
             <input class="form-control" type="file" id="file" name="file">
             <div id="fileHelp" class="form-text">@lang('lang.upload_doc_form_text')</div>
         </div>
+        @if($file->file_path)
+            <div class="mt-2">
+                <strong>@lang('Current file'):</strong> 
+                <a href="{{ Storage::url($file->file_path) }}" download>{{ basename($file->file_path) }}</a> 
+            </div>
+        @endif
     <button type="submit" class="btn btn-primary">@lang('Update')</button>
 </form>
 
