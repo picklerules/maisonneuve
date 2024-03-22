@@ -18,6 +18,7 @@
         <tbody>
         @forelse ($files as $file)
             <tr>
+                <td>{{ $file->title ? $file->title[app()->getLocale()]?? $file->title['en'] : '' }}</td>
                 <td>{{ $file->user->name }}</td>
                 <td>{{ $file->created_at->format('d/m/Y') }}</td>
                 <td>

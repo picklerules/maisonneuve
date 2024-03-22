@@ -39,10 +39,6 @@ class ArticleController extends Controller
             'contenu_fr' => 'nullable|max:255',
         ]);
 
-        //Vérifier que le champs sont remplis en anglais ou en français
-        // if (empty($request->titre_en) && empty($request->contenu_en) && empty($request->titre_fr) && empty($request->contenu_fr)) {
-        //     return back()->withErrors('Au moins une langue doit être remplie.');
-        // }
     
         // Vérifier si le titre et le contenu sont de la même langue
         $inconsistentLanguage = false;

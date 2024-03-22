@@ -14,11 +14,6 @@ class Article extends Model
 
     protected $fillable = ['titre', 'contenu', 'user_id'];
 
-    // protected $casts = [
-    //     'titre' => 'array',
-    //     'contenu' => 'array',
-    // ];
-
     public function user() {
         return $this->belongsTo(User::class);
     }

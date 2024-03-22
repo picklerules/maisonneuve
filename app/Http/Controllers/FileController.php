@@ -30,15 +30,18 @@ class FileController extends Controller
      */
     public function store(Request $request) {
         $request->validate([
-            'title_en' => 'nullable|required_without:title_fr|string|max:30',
-            'title_fr' => 'nullable|required_without:title_en|string|max:30',
+            'title_en' => 'required|string|max:30',
+            'title_fr' => 'nullable|string|max:30',
             'file' => 'required|file|mimes:pdf,zip,doc,docx',
         ]);
     
         $path = $request->file('file')->store('public/documents');
     
         $file = new File();
-        $file->title = json_encode(['en' => $request->title_en, 'fr' => $request->title_fr]);
+        $file->title = [
+            'en' => $request->title_en,
+            'fr' => $request->title_fr,
+        ];
         $file->file_path = $path;
         $file->user_id = auth()->id();
         $file->save();
@@ -64,7 +67,6 @@ class FileController extends Controller
             abort(403, 'Unauthorized action.');
         }
 
-        $file->title = json_decode($file->title, true);
 
         return view('file.edit', compact('file'));
     }
@@ -80,13 +82,17 @@ class FileController extends Controller
         }
     
         $request->validate([
-            'title_en' => 'nullable|required_without:title_fr|string|max:30',
-            'title_fr' => 'nullable|required_without:title_en|string|max:30',
-            'file' => 'sometimes|file|mimes:pdf,zip,doc,docx',
+            'title_en' => 'required|string|max:30',
+            'title_fr' => 'nullable|string|max:30',
+            'file' => 'required|file|mimes:pdf,zip,doc,docx',
         ]);
     
 
-        $titles = [];
+        $file->title = [
+            'en' => $request->title_en,
+            'fr' => $request->title_fr,
+        ];
+        
         if ($request->title_en) {
             $titles['en'] = $request->title_en;
         }
@@ -99,7 +105,7 @@ class FileController extends Controller
             $file->file_path = $path;
         }
 
-        $file->title = json_encode($titles);
+        $file->title;
         $file->save();
     
         return redirect()->route('file.index')->withSuccess(__('lang.file_update_success'));
