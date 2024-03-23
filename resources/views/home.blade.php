@@ -15,7 +15,7 @@
             <a class="btn btn-primary btn-lg" href="{{ route('etudiant.create') }}" class="btn btn-success">@lang('Create Account')</a>
         
     </div>
-    <div class="row mt-3">
+    <div class="row mt-3 mb-3">
         <div class="col-md-6">
             <img src="{{ asset('teach.jpg') }}" class="img-fluid" alt="Teaching Image">
         </div>
