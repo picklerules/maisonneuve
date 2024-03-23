@@ -13,14 +13,15 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>                
 @endif
+<h2 class="text-center mt-4 mb-4 p-3 shadow rounded bg-light">@lang('lang.edit_doc_title')</h2>
 <form method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="title_en">@lang('lang.article_title_en')</label>
         <input type="text" class="form-control" id="title_en" name="title_en" value="{{ old('title_en', $file->title['en'] ?? '') }}">
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="title_fr">@lang('lang.article_title_fr')</label>
         <input type="text" class="form-control" id="title_fr" name="title_fr" value="{{ old('title_fr', $file->title['fr'] ?? '') }}">
     </div>
@@ -30,7 +31,7 @@
             <div id="fileHelp" class="form-text">@lang('lang.upload_doc_form_text')</div>
         </div>
         @if($file->file_path)
-            <div class="mt-2">
+            <div class="mb-3">
                 <strong>@lang('Current file'):</strong> 
                 <a href="{{ Storage::url($file->file_path) }}" download>{{ $file->title ? $file->title[app()->getLocale()]?? $file->title['en'] : '' }}</a> 
             </div>

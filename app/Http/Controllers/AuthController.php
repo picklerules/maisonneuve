@@ -41,7 +41,7 @@ class AuthController extends Controller
         endif;
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
         Auth::login($user);
-        return redirect()->intended(route('etudiant.index'))->with('success', __('lang.login_success'));
+        return redirect()->intended(route('article.index'))->with('success', __('lang.login_success'));
     }
 
     /**

@@ -23,7 +23,7 @@ return [
     'no_files_text' => 'No files have been shared yet.',
     'no_articles_text' => 'There are no articles to display.',
     'edit_article_title' => "Edit Article",
-    'create_article_title' => "Create Article",
+    'create_article_title' => "Publish Article",
     'forum_title' => "Forum",
     'login_title' => "Login",
     'create_student_title' => "Add Student",
@@ -46,6 +46,9 @@ return [
     'non_authorized_action' => 'You are not authorized to perform this action.',
     'edit_article_title_en' => 'Edit article in English',
     'edit_article_title_fr' => 'Edit article in French',
+    'welcome_forum_text' => "Welcome to the Maisonneuve College forum! This space is dedicated to sharing educational content, insights, and discussions that enrich our learning environment. We encourage you to publish articles that are informative, respectful, and non-discriminatory. Let's create a vibrant and engaging community together!",
+    'publish_article' => 'Click here to publish an article',
+    'publish_file' => 'Click here to publish a file'
 ];
 
 

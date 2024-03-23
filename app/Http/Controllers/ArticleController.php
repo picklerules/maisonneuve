@@ -33,10 +33,10 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'titre_en' => 'required|max:30',
-            'contenu_en' => 'required|max:255',
-            'titre_fr' => 'nullable|max:30',
-            'contenu_fr' => 'nullable|max:255',
+            'titre_en' => 'required|max:255',
+            'contenu_en' => 'required|max:1000',
+            'titre_fr' => 'nullable|max:255',
+            'contenu_fr' => 'nullable|max:1000',
         ]);
 
     
@@ -75,7 +75,7 @@ class ArticleController extends Controller
             'user_id' => auth()->id()
         ]);
 
-        return back()->withSuccess(__('lang.article_created_success'));
+        return redirect()->route('article.index')->withSuccess(__('lang.article_created_success'));
     }
 
     /**
@@ -108,10 +108,10 @@ class ArticleController extends Controller
         }
     
         $request->validate([
-            'titre_en' => 'required|max:30',
-            'contenu_en' => 'required|max:255',
-            'titre_fr' => 'nullable|max:30',
-            'contenu_fr' => 'nullable|max:255',
+            'titre_en' => 'required|max:255',
+            'contenu_en' => 'required|max:1000',
+            'titre_fr' => 'nullable|max:255',
+            'contenu_fr' => 'nullable|max:1000',
         ]);
 
         // Vérifier si le titre et le contenu sont de la même langue

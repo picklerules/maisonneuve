@@ -23,7 +23,7 @@ return [
     'no_files_text' => 'Aucun fichier n\'a été partagé.',
     'no_articles_text' => 'Il n\'y a aucun article à afficher.',
     'edit_article_title' => "Modifier l'article",
-    'create_article_title' => "Créer un article",
+    'create_article_title' => "Publier un article",
     'forum_title' => "Forum",
     'login_title' => "Connexion",
     'create_student_title' => "Ajouter un étudiant",
@@ -46,6 +46,9 @@ return [
     'non_authorized_action' => 'Vous n\'êtes pas autorisé à effectuer cette action.',
     'edit_article_title_en' => 'Modifier l\'article en anglais',
     'edit_article_title_fr' => 'Modifier l\'article en français',
+    'welcome_forum_text' => "Bienvenue sur le forum du Collège Maisonneuve ! Cet espace est dédié au partage de contenus éducatifs, d'aperçus et de discussions qui enrichissent notre environnement d'apprentissage. Nous vous encourageons à publier des articles qui sont informatifs, respectueux et non discriminatoires. Créons ensemble une communauté dynamique et engageante !",
+    'publish_article' => 'Cliquez ici pour publier un article',
+    'publish_file' => 'Cliquez ici pour publier un fichier'
   
 ];
 

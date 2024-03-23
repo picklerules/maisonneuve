@@ -8,6 +8,9 @@
     <script src="https://kit.fontawesome.com/0f52bb4695.js" crossorigin="anonymous"></script>
 </head>
 <body class="d-flex flex-column min-vh-100">
+    <div class="banner mb-3" style="height: 250px; overflow: hidden;">
+        <img src="{{ asset('banner.jpg') }}" class="img-fluid" alt="Bannière">
+    </div>
     @php $locale = session()->get('locale')  @endphp
     <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">

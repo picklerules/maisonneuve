@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container mt-4">
-    <h2 class="my-5 text-center">@lang('lang.create_student_title')</h2>
+    <h2 class="text-center mt-4 mb-4 p-3 shadow rounded bg-light">@lang('lang.create_student_title')</h2>
 <form action="{{route('etudiant.store')}}" method="post">
     @csrf 
     <div class="form-group">

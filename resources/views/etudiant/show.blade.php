@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container my-5">
-    <h1 class="my-5 text-center">@lang('Student')</h1>
+    <h2 class="text-center mt-4 mb-4 p-3 shadow rounded bg-light">@lang('Student')</h2>
     <div class="card">
         <div class="card-body">
             <h2 class="card-title">{{ $etudiant->user->name }}</h2>

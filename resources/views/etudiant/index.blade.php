@@ -3,10 +3,8 @@
     @lang('lang.student_list_title')
 @endsection
 @section('content')
-
+<h2 class="text-center mt-4 mb-4 p-3 shadow rounded bg-light">@lang('Students list')</h2>
 @forelse ($etudiants as $etudiant)
-
-
 <div class="container my-3">
     <div class="row">
         <div class="col-sm-12">

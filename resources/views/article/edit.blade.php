@@ -13,7 +13,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>                
 @endif
-<h1 class="my-5 text-center">@lang('Forum')</h1>
+<h2 class="text-center mt-4 mb-4 p-3 shadow rounded bg-light">@lang('lang.edit_article_title')</h2>
 <div class="row justify-content-center mt-5 mb-5">
     <div class="col-md-4">
         <div class="card">

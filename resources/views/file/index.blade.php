@@ -5,7 +5,10 @@
 @section('content')
 
 <div class="container mt-4">
-    <h2 class="my-5 text-center">@lang('Repertory')</h2>
+    <h2 class="text-center mt-4 mb-4 p-3 shadow rounded bg-light">@lang('Repertory')</h2>
+    <div class="text-center mt-4 mb-5">
+        <a href="{{ route('file.create') }}" class="btn btn-outline-primary">@lang('lang.publish_file')</a>
+    </div> 
     <table class="table">
         <thead>
             <tr>
