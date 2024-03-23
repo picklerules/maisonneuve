@@ -15,7 +15,7 @@
 @endif
 <h2 class="text-center mt-4 mb-4 p-3 shadow rounded bg-light">@lang('lang.create_article_title')</h2>
 <div class="row justify-content-center mt-5 mb-5">
-    <div class="col-md-4">
+    <div class="col-md-8">
         <div class="card">
             <div class="card-body">
                 <form action="{{ route('article.store') }}" method="POST">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="contenu_en" class="form-label">@lang('lang.article_content_en')</label>
-                        <textarea class="form-control" id="contenu_en" name="contenu_en">{{ old('contenu_en') }}</textarea>
+                        <textarea class="form-control" id="contenu_en" name="contenu_en" rows="5">{{ old('contenu_en') }}</textarea>
                     </div>
                     <div class="card-header mb-3">
                         <h5 class="card-title">@lang('lang.add_article_title_fr')</h5>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="contenu_fr" class="form-label">@lang('lang.article_content_fr')</label>
-                        <textarea class="form-control" id="contenu_fr" name="contenu_fr">{{ old('contenu_fr') }}</textarea>
+                        <textarea class="form-control" id="contenu_fr" name="contenu_fr" rows="5">{{ old('contenu_fr') }}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">@lang('Publish')</button>
                 </form>

@@ -59,10 +59,7 @@
             <div class="text-danger mt-2">{{ $errors->first('password') }}</div>
         @endif
     </div>
-
-
-    
-    <button type="submit" class="btn btn-primary">@lang('Submit')</button>
+    <button type="submit" class="btn btn-primary mb-3">@lang('Submit')</button>
 </form>
 </div>
 @endsection

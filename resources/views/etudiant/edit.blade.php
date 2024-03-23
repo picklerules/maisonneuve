@@ -54,7 +54,7 @@
         @endif
     </div>
 
-    <button type="submit" class="btn btn-primary">@lang('Submit changes')</button>
+    <button type="submit" class="btn btn-primary mb-3">@lang('Submit changes')</button>
 </form>
 </div>
 @endsection
