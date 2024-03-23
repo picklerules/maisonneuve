@@ -4,6 +4,8 @@
 @endsection
 @section('content')
 
+<div class="container mt-4">
+    <h2 class="my-5 text-center">@lang('lang.create_student_title')</h2>
 <form action="{{route('etudiant.store')}}" method="post">
     @csrf 
     <div class="form-group">
@@ -62,5 +64,5 @@
     
     <button type="submit" class="btn btn-primary">@lang('Submit')</button>
 </form>
-
+</div>
 @endsection

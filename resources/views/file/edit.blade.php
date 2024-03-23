@@ -32,7 +32,7 @@
         @if($file->file_path)
             <div class="mt-2">
                 <strong>@lang('Current file'):</strong> 
-                <a href="{{ Storage::url($file->file_path) }}" download>{{ basename($file->file_path) }}</a> 
+                <a href="{{ Storage::url($file->file_path) }}" download>{{ $file->title ? $file->title[app()->getLocale()]?? $file->title['en'] : '' }}</a> 
             </div>
         @endif
     <button type="submit" class="btn btn-primary">@lang('Update')</button>

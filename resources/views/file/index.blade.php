@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container mt-4">
-    <h2>Files Repository</h2>
+    <h2 class="my-5 text-center">@lang('Repertory')</h2>
     <table class="table">
         <thead>
             <tr>
@@ -22,6 +22,7 @@
                 <td>{{ $file->user->name }}</td>
                 <td>{{ $file->created_at->format('d/m/Y') }}</td>
                 <td>
+                <a href="{{ Storage::url($file->file_path) }}"" class="btn btn-primary">@lang('Download')</a>
                     @if(auth()->id() == $file->user_id)
                         <a href="{{ route('file.edit', $file->id) }}" class="btn btn-secondary">@lang('Edit')</a>
                         <form action="{{ route('file.delete', $file->id) }}" method="POST" class="d-inline">

@@ -2,10 +2,10 @@
 //en
 return [
 
-    'text_welcome_title' => "Welcome to Maisonneuve's admin page!",
-    'text_welcome_description' => 'This interface allows you to manage student records.',
-    'text_welcome_paragraph' => "Use the navigation bar to access different sections of the administration panel.",
-    'text_welcome_button' => 'Discover more',
+    'text_welcome_title' => "Welcome to the Maisonneuve College Platform!",
+    'text_welcome_description' => 'This platform allows students to share articles in a forum and publish documents in a repository.',
+    'text_welcome_paragraph' => "Explore the forum to see what other students are sharing or visit the repository to find useful documents.",
+    'text_welcome_button' => 'Explore Now',
     'warning' => 'Warning',
     'warning_text' => "Are you sure you want to delete the student ",
     'add_article_title_en' => 'Add an article in English',
@@ -16,7 +16,7 @@ return [
     'article_content_fr' => 'Content in French',
     'warning_text_article' => "Are you sure you want to delete the article ",
     'warning_text_file' => "Are you sure you want to delete the file ",
-    'upload_doc' => 'Upload a Document',
+    'upload_doc' => 'Upload File',
     'upload_doc_text' => 'Share documents in PDF, ZIP, or DOC formats.',
     'upload_doc_button' => 'Upload',
     'upload_doc_form_text' => 'Only PDF, ZIP, or DOC files are allowed.',
@@ -30,8 +30,7 @@ return [
     'edit_student_title' => "Edit Student",
     'student_list_title' => "Student List",
     'student_show_title' => "Student Details",
-    'upload_doc_title' => "Upload a document",
-    'edit_doc_title' => "Edit document",
+    'edit_doc_title' => "Edit file",
     'repository_title' => 'Files Repository',
     'login_success' => 'You have successfully logged in.',
     'inconsistent_language' => 'The title and content must be in the same language.',
@@ -45,6 +44,8 @@ return [
     'file_upload_success' => 'File uploaded successfully.',
     'file_update_success' => 'File updated successfully.',
     'non_authorized_action' => 'You are not authorized to perform this action.',
+    'edit_article_title_en' => 'Edit article in English',
+    'edit_article_title_fr' => 'Edit article in French',
 ];
 
 

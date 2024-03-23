@@ -2,10 +2,10 @@
 //en
 return [
 
-    'text_welcome_title' => "Bienvenue sur la page d'admin de Maisonneuve!",
-    'text_welcome_description' => 'Cette interface vous permet de gérer les dossiers des étudiants.',
-    'text_welcome_paragraph' => "Utilisez la barre de navigation pour accéder aux différentes sections du panneau d'administration.",
-    'text_welcome_button' => 'Découvrir plus',
+    'text_welcome_title' => "Bienvenue sur la plateforme du Collège Maisonneuve !",
+    'text_welcome_description' => 'Cette plateforme permet aux étudiants de partager des articles dans un forum et de publier des documents dans un répertoire.',
+    'text_welcome_paragraph' => "Explorez le forum pour voir ce que les autres étudiants partagent ou visitez le répertoire pour trouver des documents utiles.",
+    'text_welcome_button' => 'Explorer maintenant',
     'warning' => 'Attention',
     'warning_text' => "Voulez-vous vraiment supprimer l'étudiant ",
     'add_article_title_en' => 'Ajouter un article en anglais',
@@ -30,8 +30,7 @@ return [
     'edit_student_title' => "Modifier un étudiant",
     'student_list_title' => "Liste des étudiants",
     'student_show_title' => "Détails de l'étudiant",
-    'upload_doc_title' => "Télévervez un document",
-    'edit_doc_title' => "Modifier un document",
+    'edit_doc_title' => "Modifier le fichier",
     'repository_title' => 'Répertoire des fichiers',
     'login_success' => 'Vous êtes connecté avec succès.',
     'inconsistent_language' => 'Le titre et le contenu doivent être dans la même langue.',
@@ -45,5 +44,8 @@ return [
     'file_upload_success' => 'Fichier téléchargé avec succès.',
     'file_update_success' => 'Fichier mis à jour avec succès.',
     'non_authorized_action' => 'Vous n\'êtes pas autorisé à effectuer cette action.',
+    'edit_article_title_en' => 'Modifier l\'article en anglais',
+    'edit_article_title_fr' => 'Modifier l\'article en français',
+  
 ];
 

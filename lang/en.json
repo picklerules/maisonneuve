@@ -27,7 +27,7 @@
     "Posted by" : "Posted by",
     "on" : "on",
     "File" : "File",
-    "Repertory" : "Repertory",
+    "Repertory" : "Files Repertory",
     "View files" : "View files",
     "Upload files" : "Upload files",
     "optional" : "optional",
@@ -35,5 +35,6 @@
     "Date Posted" : "Date Posted",
     "Actions" : "Actions",
     "Edit" : "Edit",
-    "Current file" : "Current file"
+    "Current file" : "Current file",
+    "Download" : "Download"
 }

@@ -27,7 +27,7 @@
     "Posted by" : "Publié par",
     "on" : "le",
     "File" : "Fichier",
-    "Repertory" : "Repertoire",
+    "Repertory" : "Repertoire de fichiers",
     "View files" : "Voir les fichiers",
     "Upload files" : "Télécharger un fichier",
     "optional" : "facultatif",
@@ -35,5 +35,6 @@
     "Date Posted" : "Date de publication",
     "Actions" : "Actions",
     "Edit" : "Modifier",
-    "Current file" : "Fichier actuel"
+    "Current file" : "Fichier actuel",
+    "Download" : "Télécharger"
 }

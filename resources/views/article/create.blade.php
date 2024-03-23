@@ -13,14 +13,14 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>                
 @endif
-<h1 class="mt-5 mb-4">Forum</h1>
+<h1 class="my-5 text-center">@lang('Forum')</h1>
 <div class="row justify-content-center mt-5 mb-5">
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
                 <form action="{{ route('article.store') }}" method="POST">
                     @csrf
-                    <div class="card-header">
+                    <div class="card-header mb-3">
                         <h5 class="card-title">@lang('lang.add_article_title_en')</h5>
                     </div>
                     <div class="mb-3">
@@ -31,7 +31,7 @@
                         <label for="contenu_en" class="form-label">@lang('lang.article_content_en')</label>
                         <textarea class="form-control" id="contenu_en" name="contenu_en">{{ old('contenu_en') }}</textarea>
                     </div>
-                    <div class="card-header">
+                    <div class="card-header mb-3">
                         <h5 class="card-title">@lang('lang.add_article_title_fr')</h5>
                     </div>
                     <div class="mb-3">

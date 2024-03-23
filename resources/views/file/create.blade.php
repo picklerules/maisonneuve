@@ -14,7 +14,7 @@
 </div>                
 @endif
 <div class="container mt-4">
-    <h2>@lang('lang.upload_doc')</h2>
+    <h2 class="my-5 text-center">@lang('lang.upload_doc')</h2>
     <p>@lang('lang.upload_doc_text')</p>
     <form action="{{ route('file.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
