@@ -54,7 +54,7 @@
                 @endauth
                 @guest
                 <li class="nav-item">
-                    <a class="nav-link text-primary" href="{{ route('etudiant.create')}}" class="nav-link">@lang('Create account')</a>
+                    <a class="nav-link text-primary" href="{{ route('etudiant.create')}}" class="nav-link">@lang('Create Account')</a>
                 </li>
                 @endguest
                 <li class="nav-item dropdown">
