@@ -28,14 +28,38 @@
                 <a href="{{ Storage::url($file->file_path) }}"" class="btn btn-primary">@lang('Download')</a>
                     @if(auth()->id() == $file->user_id)
                         <a href="{{ route('file.edit', $file->id) }}" class="btn btn-secondary">@lang('Edit')</a>
-                        <form action="{{ route('file.delete', $file->id) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">@lang('Delete')</button>
-                        </form>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $file->id }}">
+                                @lang('Delete')
+                        </button>
                     @endif
                 </td>
             </tr>
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal-{{ $file->id }}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">@lang('lang.warning')</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            @lang('lang.warning_file_delete')<strong>{{ $file->title ? $file->title[app()->getLocale()]?? $file->title['en'] : '' }}</strong> ?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('Cancel')</button>
+            <form action="{{ route('file.delete', $file->id) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">
+                @lang('Delete')
+                </button>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+
         @empty
 
             <tr>

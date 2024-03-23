@@ -20,21 +20,47 @@
                     @if(auth()->id() == $article->user_id)
                         <div>
                             <a href="{{ route('article.edit', $article->id) }}" class="btn btn-secondary">@lang('Edit')</a>
-                            <form action="{{ route('article.delete', $article->id) }}" method="POST" class="d-inline">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">@lang('Delete')</button>
-                            </form>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $article->id }}">
+                                @lang('Delete')
+                            </button>
                         </div>
                     @endif
                 </div>
             </div>
         </div>
     </div>
+
+    
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal-{{ $article->id }}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">@lang('lang.warning')</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            @lang('lang.warning_article_delete')<strong>{{ $article->titre[app()->getLocale()] ?? $article->titre['en'] }}</strong> ?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('Cancel')</button>
+            <form action="{{ route('article.delete', $article->id) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">
+                @lang('Delete')
+                </button>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+
     @empty
     <div class="alert alert-warning" role="alert">
         @lang('lang.no_articles_text')
     </div>
     @endforelse
 </div>
+
 @endsection

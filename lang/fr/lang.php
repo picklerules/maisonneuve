@@ -49,7 +49,9 @@ return [
     'welcome_forum_text' => "Bienvenue sur le forum du Collège Maisonneuve ! Cet espace est dédié au partage de contenus éducatifs, d'aperçus et de discussions qui enrichissent notre environnement d'apprentissage. Nous vous encourageons à publier des articles qui sont informatifs, respectueux et non discriminatoires. Créons ensemble une communauté dynamique et engageante !",
     'publish_article' => 'Cliquez ici pour publier un article',
     'publish_file' => 'Cliquez ici pour publier un fichier',
-    'first_visit_text'=> 'Est-ce votre première visite? Créez un compte étudiant ici:'
+    'first_visit_text'=> 'Est-ce votre première visite? Créez un compte étudiant ici:',
+    'warning_article_delete' => "Voulez-vous vraiment supprimer l'article ",
+    'warning_file_delete' => 'Voulez-vous vraiment supprimer le fichier ',
   
 ];
 
