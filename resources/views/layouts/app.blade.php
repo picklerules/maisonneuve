@@ -42,7 +42,6 @@
                         <li><a class="dropdown-item" href="{{ route('file.create')}}">@lang('Upload files')</a></li>
                     </ul>
                 </li>
-                @endauth
                 <li class="nav-item dropdown">
                     <a class="nav-link text-primary dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         @lang('Students')
@@ -52,6 +51,12 @@
                         <li><a class="dropdown-item" href="{{ route('etudiant.create')}}">@lang('Add student')</a></li>
                     </ul>
                 </li>
+                @endauth
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link text-primary" href="{{ route('etudiant.create')}}" class="nav-link">@lang('Create account')</a>
+                </li>
+                @endguest
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">@lang('Language') {{ $locale == '' ? '' : "($locale)" }}</a>
                     <ul class="dropdown-menu">

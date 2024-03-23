@@ -8,21 +8,21 @@
     <h2 class="text-center mt-4 mb-4 p-3 shadow rounded bg-light">@lang('lang.create_student_title')</h2>
 <form action="{{route('etudiant.store')}}" method="post">
     @csrf 
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="name">@lang('Name')</label>
         <input type="text" name="name" id="name" class="form-control" value="{{old('name')}}">
         @if($errors->has('name'))
             <div class="text-danger mt-2">{{$errors->first('name')}}</div>
         @endif
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="prenom">@lang('Address')</label>
         <input type="text" name="adresse" id="adresse" class="form-control" value="{{old('adresse')}}">
         @if($errors->has('adresse'))
             <div class="text-danger mt-2">{{$errors->first('adresse')}}</div>
         @endif
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="ville_id">@lang('City')</label>
         <select name="ville_id" id="ville_id" class="form-select">
         <option value="">@lang('Select a city')</option>

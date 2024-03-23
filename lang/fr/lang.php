@@ -26,7 +26,7 @@ return [
     'create_article_title' => "Publier un article",
     'forum_title' => "Forum",
     'login_title' => "Connexion",
-    'create_student_title' => "Ajouter un étudiant",
+    'create_student_title' => "Créer un compte étudiant",
     'edit_student_title' => "Modifier un étudiant",
     'student_list_title' => "Liste des étudiants",
     'student_show_title' => "Détails de l'étudiant",
@@ -48,7 +48,8 @@ return [
     'edit_article_title_fr' => 'Modifier l\'article en français',
     'welcome_forum_text' => "Bienvenue sur le forum du Collège Maisonneuve ! Cet espace est dédié au partage de contenus éducatifs, d'aperçus et de discussions qui enrichissent notre environnement d'apprentissage. Nous vous encourageons à publier des articles qui sont informatifs, respectueux et non discriminatoires. Créons ensemble une communauté dynamique et engageante !",
     'publish_article' => 'Cliquez ici pour publier un article',
-    'publish_file' => 'Cliquez ici pour publier un fichier'
+    'publish_file' => 'Cliquez ici pour publier un fichier',
+    'first_visit_text'=> 'Est-ce votre première visite? Créez un compte étudiant ici:'
   
 ];
 

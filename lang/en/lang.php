@@ -26,7 +26,7 @@ return [
     'create_article_title' => "Publish Article",
     'forum_title' => "Forum",
     'login_title' => "Login",
-    'create_student_title' => "Add Student",
+    'create_student_title' => "Create student account",
     'edit_student_title' => "Edit Student",
     'student_list_title' => "Student List",
     'student_show_title' => "Student Details",
@@ -48,7 +48,8 @@ return [
     'edit_article_title_fr' => 'Edit article in French',
     'welcome_forum_text' => "Welcome to the Maisonneuve College forum! This space is dedicated to sharing educational content, insights, and discussions that enrich our learning environment. We encourage you to publish articles that are informative, respectful, and non-discriminatory. Let's create a vibrant and engaging community together!",
     'publish_article' => 'Click here to publish an article',
-    'publish_file' => 'Click here to publish a file'
+    'publish_file' => 'Click here to publish a file',
+    'first_visit_text'=> 'Is this your first visit? Create a student account here:'
 ];
 
 
