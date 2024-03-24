@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    @lang('lang.upload_doc_title')
+    @lang('lang.upload_doc')
 @endsection
 @section('content')
 @if(!$errors->isEmpty())
@@ -31,7 +31,7 @@
             <input class="form-control" type="file" id="file" name="file">
             <div id="fileHelp" class="form-text">@lang('lang.upload_doc_form_text')</div>
         </div>
-        <button type="submit" class="btn btn-primary">@lang('lang.upload_doc_button')</button>
+        <button type="submit" class="btn btn-primary mb-3">@lang('lang.upload_doc_button')</button>
     </form>
 </div>
 @endsection

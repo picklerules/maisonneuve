@@ -36,7 +36,7 @@
                 <a href="{{ Storage::url($file->file_path) }}" download>{{ $file->title ? $file->title[app()->getLocale()]?? $file->title['en'] : '' }}</a> 
             </div>
         @endif
-    <button type="submit" class="btn btn-primary">@lang('Update')</button>
+    <button type="submit" class="btn btn-primary mb-3">@lang('Update')</button>
 </form>
 
 @endsection
