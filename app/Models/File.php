@@ -27,7 +27,7 @@ class File extends Model
 
     static public function titles() {
 
-        $titles = ArticleResource::collection(self::select()->get());
+        $titles = FileResource::collection(self::select()->get());
         $data = json_encode($titles);
         return json_decode($data, true);
     }
